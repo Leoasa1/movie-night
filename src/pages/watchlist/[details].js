@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Axios from 'axios';
 import Image from 'next/image';
 import Loader from '@/components/loader/Loader';
+import { API_URL } from '@/config/index.js';
 
 const Modal = ({ show, onClose, children }) => {
 	if (!show) {
@@ -53,7 +54,7 @@ const Watchlist = () => {
 	const getWatchlist = async () => {
 		const options = {
 			method: 'GET',
-			url: 'https://movie-night-server.herokuapp.com/watchlist/',
+			url: `${API_URL}/watchlist/`,
 			params: {
 				watchlistId: details,
 			},
@@ -77,7 +78,7 @@ const Watchlist = () => {
 		const addVote = async () => {
 			const options = {
 				method: 'PUT',
-				url: 'https://movie-night-server.herokuapp.com/watchlist/vote',
+				url: `${API_URL}/watchlist/vote`,
 				data: {
 					title: movie.title,
 					imdb_id: movie.imdb_id,

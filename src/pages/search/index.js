@@ -3,6 +3,7 @@ import Select from 'react-select';
 import Axios from 'axios';
 import Card from '@/components/card/Card';
 import Loader from '@/components/loader/Loader';
+import { API_URL } from '@/config/index.js';
 
 const index = () => {
 	const [genre, setGenre] = useState();
@@ -13,7 +14,7 @@ const index = () => {
 		e.preventDefault();
 		const options = {
 			method: 'GET',
-			url: 'https://movie-night-server.herokuapp.com/movies/search-by-genre',
+			url: `${API_URL}/movies/search-by-genre`,
 			params: {
 				genre: genre.value,
 			},

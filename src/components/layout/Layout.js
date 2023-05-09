@@ -18,6 +18,6 @@ const Layout = ({ title, description, children }) => {
 export default Layout;
 
 Layout.defaultProps = {
-	title: 'Invest',
-	description: 'Get to know your money',
+	title: 'Movie Night',
+	description: 'Get to plan your movie nights.',
 };

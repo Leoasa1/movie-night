@@ -3,6 +3,7 @@ import { MovieContext } from '../../context/MovieContext';
 import WatchlistCard from '@/components/card/WatchlistCard';
 import Axios from 'axios';
 import { useRouter } from 'next/router';
+import { API_URL } from '@/config/index.js';
 
 const CreateWatchlist = () => {
 	const { movieList, setMovieList } = useContext(MovieContext);

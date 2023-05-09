@@ -13,7 +13,8 @@ const AddWatchlist = ({ movieId }) => {
 			headers: {
 				'content-type': 'application/octet-stream',
 				'X-RapidAPI-Key':
-					'0fe077be1emshd40962bc735f0ccp1ca7dcjsnc61b720bed51',
+					process.env.X_RAPIDAPI_KEY ||
+					process.env.NEXT_PUBLIC_X_RAPIDAPI_KEY,
 				'X-RapidAPI-Host': 'moviesminidatabase.p.rapidapi.com',
 			},
 		};
