@@ -3,7 +3,6 @@ import { MovieContext } from '../../context/MovieContext';
 import WatchlistCard from '@/components/card/WatchlistCard';
 import Axios from 'axios';
 import { useRouter } from 'next/router';
-import { API_URL } from '@/config/index.js';
 
 const CreateWatchlist = () => {
 	const { movieList, setMovieList } = useContext(MovieContext);
@@ -48,7 +47,7 @@ const CreateWatchlist = () => {
 	return (
 		<div className='container mx-auto p-5'>
 			<h1 className='text-3xl w-full border-b-2 border-red-500 mb-4'>
-				Watchlist
+				Watch List
 			</h1>
 			{movieList.length > 0 ? (
 				<div className='grid lg:grid-cols-6 gap-5 w-full'>
