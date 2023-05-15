@@ -4,6 +4,7 @@ import Axios from 'axios';
 import Image from 'next/image';
 import Loader from '@/components/loader/Loader';
 import AddWatchlist from '@/components/addWatchlist/AddWatchlist';
+import { toast } from 'react-toastify';
 
 const index = () => {
 	const router = useRouter();
@@ -18,8 +19,7 @@ const index = () => {
 			url: `https://moviesminidatabase.p.rapidapi.com/movie/id/${movieId}`,
 			headers: {
 				'content-type': 'application/octet-stream',
-				'X-RapidAPI-Key':
-					process.env.NEXT_PUBLIC_X_RAPIDAPI_KEY,
+				'X-RapidAPI-Key': process.env.NEXT_PUBLIC_X_RAPIDAPI_KEY,
 				'X-RapidAPI-Host': 'moviesminidatabase.p.rapidapi.com',
 			},
 		};
@@ -28,7 +28,7 @@ const index = () => {
 				setMovie(response.data.results);
 				setLoading(false);
 			})
-			.catch((error) => console.log(error));
+			.catch((error) => toast.error(error));
 	};
 
 	useEffect(() => {

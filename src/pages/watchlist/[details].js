@@ -4,6 +4,7 @@ import Axios from 'axios';
 import Image from 'next/image';
 import Loader from '@/components/loader/Loader';
 import { API_URL } from '@/config/index.js';
+import { toast } from 'react-toastify';
 
 const Modal = ({ show, onClose, children }) => {
 	if (!show) {
@@ -45,9 +46,9 @@ const Watchlist = () => {
 		try {
 			// Use the Clipboard API's writeText method to copy the text
 			await navigator.clipboard.writeText(inputRef.current.value);
-			console.log('Text copied to clipboard');
+			toast.success('Text copied to clipboard');
 		} catch (err) {
-			console.error('Failed to copy text: ', err);
+			toast.error('Failed to copy text: ', err);
 		}
 	};
 
@@ -69,9 +70,8 @@ const Watchlist = () => {
 					setCanVote(true);
 					setShowPopup(true);
 				}
-				console.log(response);
 			})
-			.catch((error) => console.log(error));
+			.catch((error) => toast.error(error));
 	};
 
 	const MovieCard = ({ movie }) => {
@@ -93,7 +93,7 @@ const Watchlist = () => {
 				.then((response) => {
 					if (response.status === 200) router.reload();
 				})
-				.catch((error) => console.log(error));
+				.catch((error) => toast.error(error));
 		};
 
 		return (

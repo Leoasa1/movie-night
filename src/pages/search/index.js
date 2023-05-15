@@ -4,6 +4,7 @@ import Axios from 'axios';
 import Card from '@/components/card/Card';
 import Loader from '@/components/loader/Loader';
 import { API_URL } from '@/config/index.js';
+import { toast } from 'react-toastify';
 
 const index = () => {
 	const [genre, setGenre] = useState();
@@ -25,7 +26,7 @@ const index = () => {
 				setMovies(response.data);
 				setLoading(false);
 			})
-			.catch((error) => console.log(error));
+			.catch((error) => toast.error(error));
 	};
 
 	const customStyles = {

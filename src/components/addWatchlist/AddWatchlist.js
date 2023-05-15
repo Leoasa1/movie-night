@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { MovieContext } from '../../context/MovieContext';
 import Axios from 'axios';
+import { toast } from 'react-toastify';
 
 const AddWatchlist = ({ movieId }) => {
 	const { movieList, setMovieList } = useContext(MovieContext);
@@ -22,7 +23,7 @@ const AddWatchlist = ({ movieId }) => {
 			const response = await Axios.request(options);
 			return response.data.results;
 		} catch (error) {
-			console.log(error);
+			toast.error(error);
 		}
 	};
 	const addMovieToList = async () => {
@@ -35,14 +36,18 @@ const AddWatchlist = ({ movieId }) => {
 
 	return (
 		<>
-			{!isMovieAdded && (
+			{!isMovieAdded ? (
 				<button
 					className='btn btn-secondary w-44'
 					onClick={addMovieToList}
 					disabled={isAdded}
 				>
-					{isAdded ? 'Added!' : 'Add to Watchlist'}
+					Add to Watchlist
 				</button>
+			) : (
+				<div className='btn bg-base-100 btn-disabled text-secondary px-2 py-4 w-44'>
+					Added!
+				</div>
 			)}
 		</>
 	);

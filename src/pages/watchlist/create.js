@@ -3,6 +3,7 @@ import { MovieContext } from '../../context/MovieContext';
 import WatchlistCard from '@/components/card/WatchlistCard';
 import Axios from 'axios';
 import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 const CreateWatchlist = () => {
 	const { movieList, setMovieList } = useContext(MovieContext);
@@ -40,7 +41,7 @@ const CreateWatchlist = () => {
 				}
 			})
 			.catch((error) => {
-				console.error(error);
+				toast.error(error);
 			});
 	};
 

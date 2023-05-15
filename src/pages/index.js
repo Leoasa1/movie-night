@@ -3,6 +3,7 @@ import Axios from 'axios';
 import Card from '@/components/card/Card';
 import Loader from '@/components/loader/Loader';
 import { API_URL } from '@/config/index.js';
+import { toast } from 'react-toastify';
 
 const Home = () => {
 	const [movies, setMovies] = useState([]);
@@ -18,19 +19,18 @@ const Home = () => {
 		await Axios.request(options)
 			.then((response) => {
 				setMovies(response.data);
-				setLoading(false); // Mark loading as complete
+				setLoading(false);
 			})
 			.catch((error) => {
-				console.error(error);
+				toast.error(error);
 				setTimeout(() => {
 					getMovies();
-				}, 10000);
+				}, 20000);
 			});
 	};
 
 	useEffect(() => {
 		getMovies();
-		console.log(movies.movies);
 	}, []);
 
 	return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Navbar from '../navbar/Navbar';
+import { ToastContainer } from 'react-toastify';
 
 const Layout = ({ title, description, children }) => {
 	return (
@@ -10,6 +11,7 @@ const Layout = ({ title, description, children }) => {
 				<meta name='description' content={description} />
 			</Head>
 			<Navbar />
+			<ToastContainer theme='colored' position='top-center' />
 			{children}
 		</div>
 	);
