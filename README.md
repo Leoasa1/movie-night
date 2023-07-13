@@ -1,38 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Movie Night Planner
 
-## Getting Started
+## Introduction
 
-First, run the development server:
+This project is a Next.js application that showcases movies using RapidAPI, allowing users to vote and choose their favorites for friends and family gatherings.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js (v12 or higher)
+- Yarn package manager installed.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Installation
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+1. Clone the repository: `git clone https://github.com/Leoasa1/movie-night.git`
+2. Navigate to the project directory: `cd movie-night`
+3. Install dependencies: `yarn install`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Start the development server: `npm run dev` or `yarn dev`
+2. Open your browser and navigate to `http://localhost:3000`
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- Utilizes RapidAPI movie datasets to provide a wide range of movie options for voting.
+- Visually appealing website layout created using tailwind CSS and DaisyUI library.
+- Express.js routes handle all frontend requests, and data is stored in MongoDB database.
+- Authentication and vote tracking implemented using the UUID library.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Troubleshooting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- If you encounter any issues, make sure you have the required versions of Node.js and package manager installed.
+- Check the console for any error messages.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the [MIT License](LICENSE).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Acknowledgements
+
+- RapidAPI for providing movie datasets.
+- Next.js, tailwind CSS, DaisyUI, Express.js, MongoDB, and UUID library for their valuable contributions to this project.
+
